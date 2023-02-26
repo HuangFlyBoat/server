@@ -41,7 +41,7 @@ module.exports.register = async (req, res, next) => {
     }
 };
 
-// 获取所有用户
+// 获取所有用户(不包括自己)
 module.exports.getAllUsers = async (req, res, next) => {
     try {
         const users = await User.find({ _id: { $ne: req.params.id } }).select([
